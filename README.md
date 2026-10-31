@@ -6,8 +6,7 @@ Faciliter l'utilisation des dépôt Git darktable.org et  DT-trad-FR à l'aide d
 
 Le principe est d’aller chercher les modifications sources directement à partir du dépôt principal de Darktable, de faire les modifications que l’on souhaite, puis de pousser ces modifs vers le dépôt DT-trad-FR. Une fois ces modifs disponibles sur ce dépôt, elles seront regroupées (rebase) pour pouvoir créer une PR à l’attention de Pascal.
 
-![Schéma](./schéma.png)
-
+![Schéma](images/schéma.png)
 
 Il faut maintenant modifier la configuration du dépôt DT-trad-FR dans le fichier de configuration de git (emplacement : \<dossier du clone\>/.git/config). Toutes ces modifs sont faites dans le script d’utilisation. Elles ne sont données ici qu’à titre d’information.
 
