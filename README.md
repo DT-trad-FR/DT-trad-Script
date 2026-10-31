@@ -75,8 +75,7 @@ Il est également nécessaire de définir la clé SSH qui sera utilisée pour le
 
 ## Le script
 
-LE script est disponible dans ce dépôt dans le dossier src
-
+Le script est disponible dans ce dépôt dans le dossier src
 
 Avant de l’utiliser, vous devrez le personnaliser.
 
