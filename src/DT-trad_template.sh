@@ -30,6 +30,8 @@ currBranch="$USER-$currDate"
 
 # test git command exists on system
 [ ! -x "$(command -v git)" ] && echo "git doit être installé sur cette machine !" && exit 1
+# test poedit command exists on system
+[ ! -x "$(command -v poedit)" ] && echo "poedit n'est pas installé sur cette machine !" && exit 1
 
 
 # Check if a darktable directory already exists in the local base folder
@@ -71,7 +73,6 @@ git branch "$currBranch" && git switch "$currBranch"
 # at this stage we could 
 # * force poedit po/fr.po 
 # * and propose to push the current branch after exiting poedit
-[ ! -x "$(command -v poedit)" ] && echo "poedit n'est pas installé sur cette machine !" && exit 1
 
 poedit po/fr.po > /dev/null 2>&1
 
