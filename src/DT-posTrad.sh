@@ -14,11 +14,11 @@ set -e
 # localBaseFolder : racine du dossier local de traduction de sarktable
 scriptDir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 dtTradFolder="DT-trad-FR"
-localBaseFolder="/media/shared/Photos"
-cd "$localBaseFolder/$dtTradFolder"
 
 # Initialisation des variables paramétrables
 source $scriptDir/DT-preTrad.sh
+
+cd "$localBaseFolder/$dtTradFolder"
 
 # test git command exists on system
 [ ! -x "$(command -v git)" ] && echo "git doit être installé sur cette machine !" && exit 1
