@@ -16,6 +16,7 @@ set -e
 # gitBranch	  : nom de la branche perso de la forme "Br_<pseudo>"
 
 localBaseFolder="path"		# chemin d'accès au dossier de base du clone, SANS le dossier nommé darktable. C'est dans ce dossier qu'est cloné darktable
+                          # la syntaxe de ce chemin ne doit pas comprendre la ~ et doit rester encadrée de ".
 gitUser="GitHup username"	# tel que défini dans GitHub
 gitEmail="GitHub email"		# tel que défini dans GitHub
 gitBranch="BR_pseudo" 		# remplacer "pseudo" par un pseudo perso et laisser le préfixe BR_
