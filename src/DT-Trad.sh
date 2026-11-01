@@ -55,7 +55,6 @@ then
     git config user.name $gitUser
     git config user.email $gitEmail
     git remote add upstream "$upstreamRepo"
-    git branch "$gitBranch"
 else
 
 #   sinon récupèrer darktable de darktable.org pour être à jour
@@ -66,7 +65,11 @@ else
     git pull origin master
 fi
 
-# Switch sur la branche locale courante
+# Crée la branche locale et switche sur celle-ci
+if ! git branch --list | grep --silent "$gitBranch" ;
+then
+    git branch "$gitBranch"
+fi
 git switch "$gitBranch"
 
 # prêt à traduire 
