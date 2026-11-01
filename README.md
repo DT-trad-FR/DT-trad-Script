@@ -121,18 +121,21 @@ Voici ce fichier suite aux modifications.
 
 [remote "upstream"]
 	url = git@github.com:DT-trad-FR/darktable.git
-    fetch = +refs/heads/\*:refs/remotes/upstream/\*
+	fetch = +refs/heads/\*:refs/remotes/upstream/\*
 ```
 
 ## Maintenance du dépôt DT-trad-FR
 
-### Synchronisation du fork.
+### Synchronisation du fork
 
 Comme expliqué, le fork ne doit plus être synchronisé systématiquement puisque la branche master n’est plus utilisée. Néanmoins une mise à jour régulière évitera des problèmes.
 
 > Bouton **Sync fork** dans l'onglet `Code` du dépôt [DT-trad-FR/darktable](https://github.com/DT-trad-FR/darktable)
 
-### Résolution des conflits et merge.
+### En cas de besoin de résolution des conflits et merge
+
+La résolution de conflits ne concerne que le cas où plusieurs branches ont été poussées par différents traducteurs. 
+Dans le cas d'une simple branche reçue sur le dépôt DT-trad-FR, il suffit de passer au chapitre suivant.
 
 Méthode la plus courante et sécurisée pour fusionner une branche personnelle dans une autre branche personnelle.
 
