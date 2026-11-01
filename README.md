@@ -131,23 +131,24 @@ Méthode la plus courante et sécurisée pour fusionner une branche personnelle 
 
 1. Aller sur le dépôt [DT-trad-FR/darktable](https://github.com/DT-trad-FR/darktable)
 2. Cliquer sur l'onglet `Pull requests` en haut de la page.
-3. Cliquez sur le bouton <span style="background-color: #1013a5;">New pull request</span>.
+3. Cliquez sur le bouton **New pull request**.
 4. Dans les menus déroulants : à gauche remplacer base `repository darktable.org/darktable` par `DT-trad-FR/darktable`, puis dans
    - `base` : choisir la branche personnelle d'un traducteur la plus ancienne qui va recevoir les nouvelles traductions (ex: BR_manu-p).
    - `compare` : choisir la branche d'un autre traducteur contenant ses nouvelles traductions (ex: BR_jpv).
-5. GitHub affiche en bas de page un récapitulatif des commits et des différences. Cliquer sur <span style="background-color: #1013a5;">Create pull request</span>.
-6. Au cas où GitHub affiche "This branch has conflicts that must be resolved", cliquer sur <span style="background-color: #1013a5;">Resolve conflicts</span>.
+5. GitHub affiche en bas de page un récapitulatif des commits et des différences. Cliquer sur **Create pull request**.
+6. Au cas où GitHub affiche "This branch has conflicts that must be resolved", cliquer sur **Resolve conflicts**.
    1. dans l'éditeur affiché, 
    2. arbitrer les modifications dans les différentes sections entre les <<<<, ===== et >>>>>
       retirer ce qui doit l'être : lignes <<<<<<, ======= et >>>>>
-   3. Cliquer sur <span style="background-color: #1013a5;">Mark as resolved</span>, puis <span style="background-color: #1013a5;">Commit merge</span>.
-7. Valider en cliquant sur <span style="background-color: #1013a5;">Merge pull request</span>, insérer un commentaire puis <span style="background-color: #1013a5;">Confirm merge</span>.
-8. Cliquer sur <span style="background-color: #1013a5;">Delete branch</span> pour supprimer la branche de traduction devenue inutile.
+   3. Cliquer sur **Mark as resolved**, puis sur **Commit merge**.
+7. Valider en cliquant sur **Merge pull request**, insérer un commentaire puis **Confirm merge**.
+8. Cliquer sur **Delete branch** pour supprimer la branche de traduction devenue inutile.
+9. Réitérez l'opération s'il y a plus de deux braches à fusionner.
 
 ### Pull Request pour darktable.org
-Dans l'onglet `Pull request` de la page d'accueil du dépôt, cliquer sur le bouton <span style="background-color: #1013a5;">New pull request</span>.  
+Dans l'onglet `Pull request` de la page d'accueil du dépôt, cliquer sur le bouton **New pull request**.  
 Ne pas changer `base repository : darktable.org/darktable` ni `base : master`  
 Ne pas changer `head repository` mais changer `compare : <nom de la branche du traducteur conservée>`  
 Git affiche une page récapitulant tous les commits qui vont faire partie de la PR.  
-Puis cliquer sur le bouton <span style="background-color: #1013a5;">Create Pull request</span>.
+Puis cliquer sur le bouton **Create pull request**.
 
