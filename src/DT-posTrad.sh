@@ -41,7 +41,7 @@ then
     echo "! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !"
     echo "À présent, merci de prévenir les autres traducteurs sur le groupe Signal !"
     echo "Cela leur permettra de ne pas perdre leurs éventuelles traductions des mêmes parties..."
-    echo "par une PR un peu trop précoce.
+    echo "par une PR un peu trop précoce."
 
 else
     echo "La branche peut être pushée à tout moment en éxécutant le script $scriptDir/DT-posTrad.sh"
