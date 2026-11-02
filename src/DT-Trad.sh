@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script Name: DT-Trad.sh
 # Description: Opérations GIT pour une traduction locale
-# Version: 2.0
+# Version: 3.0
 # Author: Manuel PINTOR / Jean-Pierre Verrue
 # Date: 2026-10-27
 # Licence: GNU GPL v3.0
@@ -9,28 +9,69 @@
 
 set -e
 
-# scriptDir	  : dossier dans lequel est ce script (et DT-posTrad.sh)
-# originRepo   	  : dépôt darktable.org sur github (source)
-# upstreamRepo    : dépôt DT-trad-FR sur github (upstream)
-# darktable	  : nom d'origine du dépôt 
-# dtTradFolder	  : nom du répertoire de la traduction de darktable
-# currDate        : date courante au format YYMMDD
+confFile="$HOME/.config/DT-trad.cfg"
+
+function createConfFile { # Création du fichier de configuration
 
 scriptDir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-originRepo="https://github.com/darktable-org/darktable.git"
-upstreamRepo="git@github.com:DT-trad-FR/darktable.git"
-darktable="darktable"
-dtTradFolder="DT-trad-FR"
-currDate=`date +"%y%m%d"`
 
-# Initialisation des variables paramétrables
-source $scriptDir/DT-preTrad.sh
+answer="N"
+while [ "$answer" != "o" ]
+do
+    printf "\n%s : Création du fichier de configuration\n" $0
+    printf "Chemin d'accès au dossier de base du clone, SANS le dossier nommé darktable.\n"
+    printf "C'est dans ce dossier qu'est cloné darktable\n"
+    printf "Ce chemin ne doit pas comprendre le caractère '~', utilisez \$HOME si besoin"
+    read -p " : " -r localBaseFolder
+
+    printf "Le nom d'utilisateur (pseudo) que vous souhaitez avoir dans Git"
+    read -p " : " -r gitUser
+
+    printf "L'adresse mail que vous souhaitez utiliser dans Git"
+    read -p " : " -r gitEmail
+
+    printf "Le nom de la branche que vous souhaitez utiliser dans Git.\n"
+    printf "Ce nom sera préfixé par \"BR_\""
+    read -p " : " -r gitBranch
+    gitBranch="BR_$gitBranch"
+
+    printf "\nVous avez saisi :
+    Dossier de base   : $localBaseFolder
+    Nom d'utilisateur : $gitUser
+    Adressz mail      : $gitEmail
+    Nom de la branche : $gitBranch\n\n"
+
+    read  -p "Confirmez vous votre saisie ? [o/N] " -n 1 -r answer
+done
+
+cat << END-OF-FILE > $confFile
+# Fichier de configuration du Script DT-Trad.sh
+
+scriptDir=$scriptDir # dossier dans lequel est ce script (et DT-posTrad.sh)
+originRepo="https://github.com/darktable-org/darktable.git" # dépôt darktable.org sur github (source)
+upstreamRepo="git@github.com:DT-trad-FR/darktable.git" # dépôt DT-trad-FR sur github (upstream)
+darktable="darktable" # nom d'origine du dépôt 
+dtTradFolder="DT-trad-FR"  # nom du répertoire de la traduction de darktable
+
+localBaseFolder="$localBaseFolder"	# racine locale du clone, créé si inexistant.
+gitUser="$gitUser" # username sur github
+gitEmail="$gitEmail" # mail sur github
+gitBranch="$gitBranch" # Nom de la branche perso de la forme "Br_<pseudo>"
+END-OF-FILE
+}
+
+if [ ! -e $confFile ] ; # Il n'y a pas de fichier de configuration, le créer.
+then
+    createConfFile
+fi
+
+source $confFile # Lecture du fichier de configuration
 
 # test si la commande git existe sur le système
 [ ! -x "$(command -v git)" ] && echo "git doit être installé sur cette machine !" && exit 1
 
 # Check si le dossier darktable existe déjà dans le dossier de base
-# et le renomme si c'est c'est déjà un clone local de darktable.org
+# et le renomme si c'est déjà un clone local de darktable.org
 if [ -e "$localBaseFolder/$darktable" ]; 
 then
     echo "Un dossier $darktable existe déjà dans $localBaseFolder."

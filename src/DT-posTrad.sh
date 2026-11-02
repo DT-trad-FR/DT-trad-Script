@@ -9,14 +9,8 @@
 
 set -e
 
-# scriptDir       : dossier dans lequel est ce script (et DT-posTrad.sh)
-# dtTradFolder	  : nom du dossier local de traduction de darktable
-# localBaseFolder : racine du dossier local de traduction de sarktable
-scriptDir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-dtTradFolder="DT-trad-FR"
-
-# Initialisation des variables paramétrables
-source $scriptDir/DT-preTrad.sh
+confFile="$HOME/.config/DT-trad.cfg"
+source $confFile # Lecture du fichier de configuration
 
 cd "$localBaseFolder/$dtTradFolder"
 
