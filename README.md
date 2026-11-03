@@ -94,7 +94,7 @@ Lorsque vous avez fini vos traductions et les avez poussées vers le dépôt DT-
 
 ## Configuration git de votre clone du dépot DT-trad-FR 
 
-Pour information, car réalisé par DT-trad.sh à l'initialisation du clone local.
+**Pour information**, car réalisé par DT-trad.sh à l'initialisation du clone local.
 
 Configuration du dépôt DT-trad-FR dans le fichier de configuration de Git (emplacement : `<dossier du clone>/.git/config`).
 
