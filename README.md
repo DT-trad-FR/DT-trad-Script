@@ -92,6 +92,8 @@ N'utilisez plus/pas directement **poedit**, utilisez _**TOUJOURS**_ **DT-Trad.sh
 
 Lorsque vous avez fini vos traductions et les avez poussées vers le dépôt DT-trad-FR, n'oubliez pas de prévenir sur Signal le mainteneur du dépôt DT-trad-FR que de nouvelles traductions ont été poussées.
 
+De même, le mainteneur du dépôt DT-trad-FR se renseignera systématiquement des traductions en cours **AVANT** de lancer la PR Darktable.org, et il préviendra également au moment de chaque PR de sorte que les traducteurs attendent que celle-ci soit prise en compte du le dép$ot Darktable.org.
+
 ## Configuration git de votre clone du dépot DT-trad-FR 
 
 **Pour information**, car réalisé par DT-trad.sh à l'initialisation du clone local.
