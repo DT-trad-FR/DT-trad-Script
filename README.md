@@ -23,6 +23,8 @@ Vous devez définir définir la clé SSH qui sera utilisée pour le push :
    2. `Key type` : Authentication key (valeur par défaut).
    3. `Key` : la ligne récupérée au point 2 ci-dessus.
 
+**Cette opération est à réaliser une seule fois.**
+
 ## Les scripts
 
 Les scripts sont disponibles dans ce dépôt dans le dossier `src`  
