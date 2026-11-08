@@ -67,7 +67,7 @@ else
     # S'il ne faut pas l'utiliser, demande s'il faut la supprimer ou non
     # Sinon détermine le nom de la nouvelle branche
 
-    currBranch="`git branch --merged | grep "* $gitBranchPrefix" | awk -F"* " '{ print $2 }' | xargs`"
+    currBranch="`git branch --merged | grep "* $gitBranchPrefix" | awk -F"*" '{ print $2 }' | xargs`"
     if [ ! -z $currBranch ]; 
     then
 	echo "Une branche nommé $currBranch existe."
