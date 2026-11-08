@@ -27,7 +27,7 @@ gitBranchPrefix="${gitBranch}"
 cd "$localBaseFolder/$dtTradFolder"
 
 # Récupération de la banche git actuelle
-currBranch="`git branch --merged | grep "* $gitBranchPrefix" | awk -F"* " '{ print $2 }' | xargs`"
+currBranch="`git branch --merged | grep "* $gitBranchPrefix" | awk -F"*" '{ print $2 }' | xargs`"
 
 # Si elle n'existe pas, il n'y a rien à pusher
 # Sinon, on demande s'il faut l'envoyer
