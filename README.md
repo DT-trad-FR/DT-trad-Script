@@ -156,7 +156,8 @@ Méthode la plus courante et sécurisée pour fusionner une branche personnelle 
    2. arbitrer les modifications dans les différentes sections entre les <<<<, ===== et >>>>>
       retirer ce qui doit l'être : lignes <<<<<<, ======= et >>>>>
    3. Cliquer sur **Mark as resolved**, puis sur **Commit merge**.
-7. Valider en cliquant sur **Merge pull request**, insérer un commentaire puis **Confirm merge**.
+   4. Valider en cliquant sur **Merge pull request**, insérer un commentaire puis **Confirm merge**.
+7. Sinon (pas de conflit à résoudre), mettre éventuellement un titre et refaire **Create pull request**.
 8. Cliquer sur **Delete branch** pour supprimer la branche de traduction devenue inutile.
 9. Réitérez l'opération s'il y a plus de deux braches à fusionner.
 
