@@ -56,7 +56,9 @@ then
     git config user.name $gitUser
     git config user.email $gitEmail
     git remote add upstream "$upstreamRepo"
+    echo "Création de la branche locale du moment..."
     gitBranch="${gitBranchPrefix}_$currDate"
+    git branch "$gitBranch"
 else
 
 #   sinon direction le dossier du dépôt local
